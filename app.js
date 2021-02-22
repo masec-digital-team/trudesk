@@ -21,6 +21,8 @@ var nconf = require('nconf')
 var Chance = require('chance')
 var chance = new Chance()
 var pkg = require('./package.json')
+const dotenv = require('dotenv')
+dotenv.config()
 // `var memory = require('./src/memory');
 
 var isDocker = process.env.TRUDESK_DOCKER || false

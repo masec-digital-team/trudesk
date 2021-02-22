@@ -18,6 +18,8 @@ var _ = require('lodash')
 var winston = require('winston')
 var pkg = require('../../package')
 var Chance = require('chance')
+const dotenv = require('dotenv')
+dotenv.config()
 
 var installController = {}
 installController.content = {}

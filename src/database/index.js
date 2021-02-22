@@ -15,6 +15,8 @@
 var nconf = require('nconf')
 var mongoose = require('mongoose')
 var winston = require('winston')
+const dotenv = require('dotenv')
+dotenv.config()
 
 var db = {}
 var mongoConnectionUri = {

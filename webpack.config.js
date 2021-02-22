@@ -2,6 +2,8 @@ var path = require('path')
 var webpack = require('webpack')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var TerserPlugin = require('terser-webpack-plugin')
+const dotenv = require('dotenv')
+dotenv.config()
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
