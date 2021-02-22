@@ -1,0 +1,15 @@
+version: "3.3"
+
+services: 
+  trudesk-db:
+    image: mongo:4.2
+    ports: 
+      - 27017:27017
+    volumes: 
+      - ./db:/data/db
+  trudesk:
+    build: .
+    ports:
+      - 5252:8118
+    volumes: 
+      - ./:/usr/src/trudesk
