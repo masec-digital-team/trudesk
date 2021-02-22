@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3"
 
 services: 
   trudesk-db:
@@ -10,6 +10,8 @@ services:
   trudesk:
     build: .
     ports:
-      - 5252:8118
-    volumes: 
-      - ./:/usr/src/trudesk
+      - 8118:8118
+    # volumes: 
+    #   - ./:/usr/src/trudesk
+    depends_on: 
+      - trudesk-db

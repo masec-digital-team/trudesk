@@ -1,13 +1,13 @@
 #!/bin/bash
 
-if [ ! -d /mnt/projects/masec/trudesk/public/uploads/users ]; then
+if [ ! -d /usr/src/trudesk/public/uploads/users ]; then
     echo "Creating Directory..."
-    mkdir /mnt/projects/masec/trudesk/public/uploads/users
+    mkdir /usr/src/trudesk/public/uploads/users
 fi
 
-if [ ! -f /mnt/projects/masec/trudesk/public/uploads/users/defaultProfile.jpg ]; then
+if [ ! -f /usr/src/trudesk/public/uploads/users/defaultProfile.jpg ]; then
     echo "Coping defaultProfile.jpg"
-    cp /mnt/projects/masec/trudesk/public/img/defaultProfile.jpg /mnt/projects/masec/trudesk/public/uploads/users/defaultProfile.jpg
+    cp /usr/src/trudesk/public/img/defaultProfile.jpg /usr/src/trudesk/public/uploads/users/defaultProfile.jpg
 fi
 
-node /mnt/projects/masec/trudesk/runner.js
+node runner.js
