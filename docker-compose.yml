@@ -11,7 +11,7 @@ services:
     build: .
     ports:
       - 8118:8118
-    # volumes: 
-    #   - ./:/usr/src/trudesk
+    volumes: 
+      - ./src:/usr/src/trudesk/src
     depends_on: 
       - trudesk-db
