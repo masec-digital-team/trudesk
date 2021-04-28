@@ -11,16 +11,17 @@
             font: 400 14px/20px "Roboto", Arial, sans-serif;
         }
         body {
-            background: #eee;
+            background: #FFFFFF;
             text-align: center;
             font-family: "Roboto", Arial, sans-serif;
             height: 100%;
+            width: 100%;
             -webkit-font-smoothing: subpixel-antialiased;
         }
 
         .wrapper,
         #privacyPolicySlide {
-            width: 400px;
+            width: 100%;
             height: auto;
             position: absolute;
             left: 50%;
@@ -273,20 +274,27 @@
     </svg>
 <div class="wrapper">
     <div class="slides">
-        <div class="slide">
-            <h2 style="margin-bottom: 18px;">New Issue</h2>
-            <p style="text-align: left;">
-                This wizard will walk you through the process of submitting a new issue.
+        <div class="slide" >
+            <h2 style="margin-bottom: 18px;">Institutional Enquiry Form</h2>
+            <p style="width:100%;margin:10px;">
+                <h4> Kurlon is with India on its fight to win the war on Covid.</h4>
+                <h4> To facilitate quick update of infrastructure for healthcare, Kurlon is offering the following products to institutions, </h4>
+                <h4> hospitals and NGOs involved in Covid treatment across india. </h4>
             </p>
-
-            <button class="btn md-btn md-btn-wave md-btn-success" data-next>Lets Get Started</button>
+            <div style="width: 40%; text-align:center; margin:0 auto;">
+            <button class="btn md-btn md-btn-wave md-btn-success" data-next>NEW ENQUIRY</button>
+            <a href="/login" class="no-ajaxy" style="width:100%; padding: 0; margin: 0;">
+                    <button class="btn md-btn md-btn-wave md-btn-primary" type="button" style="width: 100%; margin-bottom: 10px !important;">Check status of Enquiry</button>
+                </a>
+                </div>
         </div>
 
         <div id="userInfoSlide" class="slide hide">
             <h2 style="margin-bottom: 25px;">User Information</h2>
-            <p style="text-align: left;">
-                We need to know how to store your request. Please give us a little information about you.
+            <p style="text-align: center;">
+                <h4> We need to know how to store your request. Please give us a little information about you.</h4>
             </p>
+            <div style="width: 30%; text-align:center; margin:0 auto;">
             <form id="userInfo" class="uk-form-stacked uk-clearfix">
                 <div class="uk-margin-medium-bottom">
                     <label for="user-fullname">Full Name</label>
@@ -308,33 +316,129 @@
                     <button id="checkEmail" class="btn md-btn md-btn-wave md-btn-success" type="button">Next</button>
                 </div>
             </form>
-
+            </div>
             <a href="#" class="no-ajaxy" id="privacyPolicyBtn">Privacy Policy</a>
         </div>
-        <div class="slide hide">
-            <h2 style="margin-bottom: 25px;">Issue</h2>
-            <p style="text-align: left; margin-bottom: 25px;">
-                Please tell us about the issue you're having.
-                Remember to be as detailed as possible to ensure its resolved promptly.
+          <div class="slide hide" style="overflow-y:scroll; height:500px; width:100%; align:center; justify:center;display:inline-block;
+   position:relative;">  
+            <h2 style="margin-bottom: 50px;">Enquiry Form</h2>
+            <p style="text-align: center; margin-bottom: 25px;">
+               <h4>Kurlon is with India on its fight to win the war on Covid. </h4>
+               <h4>To facilitate quick update of infrastructure for healthcare, </h4>
+                <h4>Kurlon is offering the following products to institutions, hospitals and NGOs.</h4>
             </p>
-
+            <p>Please provide your details in the below form to get a quotation and place your order.</p>
+            <div style="width: 40%; text-align:center; margin:0 auto;">
             <form id="adminAccount" class="uk-form-stacked uk-clearfix">
+                   <div class="uk-margin-medium-bottom">
+                    <label for="ticket-subject">GST Number</label>
+                    <input type="text" id="ticket-subject" name="ticket-subject" class="md-input" required />
+                </div>
+                 <div class="uk-margin-medium-bottom">
+                    <label for="ticket-issue">Institution/Hospital Name</label>
+                    <input type="text" id="ticket-issue" name="ticket-issue" class="md-input" required />
+                </div>
+
+               <div class="uk-margin-medium-bottom">
+                    <label for="ticket-address">Address</label>
+                    <input type="text" id="ticket-address" name="ticket-address" class="md-input" required />
+                </div>
                 <div class="uk-margin-medium-bottom">
+                    <label for="ticket-city">City</label>
+                    <input type="text" id="ticket-city" name="ticket-city" class="md-input" required />
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="ticket-pin">PIN</label>
+                    <input type="text" id="ticket-pin" name="ticket-pin" class="md-input" required />
+                </div>
+                  <div class="uk-margin-medium-bottom">
+                    <label for="ticket-state">State</label>
+                    <input type="text" id="ticket-state" name="ticket-state" class="md-input" required />
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="ticket-pname">Purchase Contact Person name</label>
+                    <input type="text" id="ticket-pname" name="ticket-pname" class="md-input" required />
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="ticket-email">Email ID</label>
+                    <input type="text" id="ticket-email" name="ticket-email" class="md-input" required />
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="ticket-mobile">Mobile number</label>
+                    <input type="text" id="ticket-mobile" name="ticket-mobile" class="md-input" required />
+                </div> 
+                <p style="text-align: center; margin-bottom: 25px;">
+                   * Unit Prices shown are without GST. GST applicable on the list price. Freight charges extra based on actuals
+                 </p>
+                 <div style="display:flex;justify-content: space-between;text-align:center;margin:25px;">
+                     
+                    <select>
+                     <itemgroup label="EPE + Foam Quilt( 13 D) ">
+                         <option value="EPE + Foam Quilt( 13 D) 72 x 30 x 90mm">EPE + Foam Quilt( 13 D) 72 x 30 x 90mm</option>
+                         <option value="EPE + Foam Quilt( 13 D) 72 x 30 x 70mm ">EPE + Foam Quilt( 13 D) 72 x 30 x 70mm </option>
+                         <option value="EPE + Foam Quilt( 13 D) 72 x 36 x 90mm  ">EPE + Foam Quilt( 13 D) 72 x 36 x 90mm </option>
+                         <option value="EPE + Foam Quilt( 13 D) 72 x 36 x 70mm ">EPE + Foam Quilt( 13 D) 72 x 36 x 70mm </option>
+                         <option value="EPE + Foam Quilt( 13 D) 72 x 30 x 100mm  ">EPE + Foam Quilt( 13 D) 72 x 30 x 100mm  </option>
+                         <option value="EPE + Foam Quilt( 13 D) 72 x 36 x100mm  ">EPE + Foam Quilt( 13 D) 72 x 36 x100mm  </option>
+                      </itemgroup>
+                      <itemgroup label="Bonded + foam quilt( 13 D)">
+                         <option value="Bonded + foam quilt( 13 D) 72 X 30 X 100 ">Bonded + foam quilt( 13 D) 72 X 30 X 100 </option>
+                         <option value="Bonded + foam quilt( 13 D) 72 X 36 X 100 ">Bonded + foam quilt( 13 D) 72 X 36 X 100 </option>
+                         <option value="Bonded + foam quilt( 13 D) 72 x 30 x 75 ">Bonded + foam quilt( 13 D) 72 x 30 x 75 </option>
+                         <option value="Bonded + foam quilt( 13 D) 72 x 36 x 75 ">Bonded + foam quilt( 13 D) 72 x 36 x 75 </option>
+                       </itemgroup>
+                       <itemgroup label="Foam( 23 D)">
+                           <option value="Foam( 23 D) 72 x 30 x 75  ">Foam( 23 D) 72 x 30 x 75  </option>
+                           <option value="Foam( 23 D) 72 x 30 x 90   ">Foam( 23 D) 72 x 30 x 90   </option>
+                           <option value="Foam( 23 D) 72 x 36 x 75    ">Foam( 23 D) 72 x 36 x 75    </option>
+                           <option value="Foam( 23 D) 72 x 36 x90     ">Foam( 23 D) 72 x 36 x90     </option>
+                       </itemgroup>
+                    </select>
+                    <div>
+                   <label for="ticket-subject">Quantity</label>
+                    <input type="text" id="ticket-subject" name="ticket-subject" class="md-input" required />
+                    </div>
+                    <div>
+                   <label for="ticket-subject">Unit Price</label>
+                    <input type="text" id="ticket-subject" name="ticket-subject" class="md-input" required />
+                    </div>
+                    <div>
+                   <label for="total_price">Total Price</label>
+                    <input type="text" id="total_price" name="total_price" class="md-input" required />
+                    </div>
+                 </div> 
+                {{!-- <div class="uk-margin-medium-bottom"> 
                     <label for="ticket-subject">Subject</label>
                     <input type="text" id="ticket-subject" name="ticket-subject" class="md-input" required />
                 </div>
                 <div class="uk-margin-medium-bottom">
                     <label for="ticket-issue">Issue</label>
                     <textarea name="ticket-issue" id="ticket-issue" cols="30" rows="10" class="md-input" required></textarea>
-                </div>
-
+                </div>  --}}
+                <div style="display:flex;justify-content: space-between;text-align:center;margin:25px;">
+                    <div style="width:50%;">
+                    </div>
+                    <div  style="width:50%;">
+                        <div style="display:flex;justify-content: space-between;text-align:center;">
+                        <label>SUB TOTAL (Without GST)</label><label>XXXXX</label>
+                        </div>
+                        <div style="display:flex;justify-content: space-between;text-align:center;">
+                        <label>GST 18%</label><label>XXXXX</label>
+                        </div>
+                        <div style="display:flex;justify-content: space-between;text-align:center;">
+                        <label><b>TOTAL</b></label><label><b>XXXXX</b></label>
+                        </div>
+                    </div>
+                 </div>
                 <div style="width: 25%; float: left;">
                     <button class="btn md-btn md-btn-wave md-btn-primary1" type="button" data-prev>Back</button>
                 </div>
                 <div style="width: 70%; float: right;">
-                    <button class="btn md-btn md-btn-wave md-btn-success" type="button" id="submit-issue">Submit Issue</button>
+                    <button class="btn md-btn md-btn-wave md-btn-success" type="button" id="submit-issue">Submit my Requirement to Kurlon team for Processing</button>
                 </div>
             </form>
+            </div>
+
         </div>
         <div class="slide hide">
             <h2 style="margin-bottom: 25px;">Creating Issue...</h2>
@@ -645,8 +749,9 @@
                 ticket = {
                     subject: adminInfoFormData['ticket-subject'],
                     issue: adminInfoFormData['ticket-issue']
-                };
+                }; 
 
+                
                 advanceSlide();
 
                 //Send the install POST wait for Response...

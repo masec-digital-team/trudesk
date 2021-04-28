@@ -51,7 +51,7 @@ ticketsController.pubNewIssue = function (req, res) {
         if (err) return handleError(res, err)
 
         var content = {}
-        content.title = 'New Issue'
+        content.title = 'Institutional Enquiry Form'
         content.layout = false
         content.data = {}
         if (privacyPolicy === null || _.isUndefined(privacyPolicy.value)) {
