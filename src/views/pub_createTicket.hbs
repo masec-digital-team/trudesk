@@ -6,29 +6,22 @@
     <link rel="stylesheet" href="/css/app.min.css">
     <style type="text/css">
         html {
-            overflow-x: hidden;
             height: 100%;
             font: 400 14px/20px "Roboto", Arial, sans-serif;
         }
         body {
-            background: #FFFFFF;
             text-align: center;
             font-family: "Roboto", Arial, sans-serif;
             height: 100%;
-            width: 100%;
             -webkit-font-smoothing: subpixel-antialiased;
         }
 
         .wrapper,
         #privacyPolicySlide {
-            width: 100%;
+            max-width: 600px;
             height: auto;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50.111%);
-            -webkit-transform: translate(-50%, -50.111%);
-            padding: 15px 0;
+            margin: 0 auto;
+            padding: 15px;
         }
 
         #privacyPolicySlide {
@@ -171,9 +164,8 @@
         }
 
         #logosvg {
-            position: absolute;
-            top: 35px;
-            left: 35px;
+            margin: 0 auto;
+            max-width: 150px;
         }
 
         .l1 {
@@ -221,7 +213,7 @@
     <script src="/js/truRequire.js"></script>
 </head>
 <body>
-<svg version="1.1" id="logosvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+{{!-- <svg version="1.1" id="logosvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 288.9 70.1" xml:space="preserve" style="width: 150px; margin-bottom: 40px;">
     <style type="text/css">
         .st0 {
@@ -271,34 +263,92 @@
         c-2.1,0-5.7,2.1-10.7,6.4c-3.1,13.2-4.7,22.2-4.7,27.1c-3.4,1-7.9,1.5-13.4,1.5c-0.1-1.1-0.1-2-0.1-2.8c0-2.7,1.8-11.9,5.4-27.6
         C236.3,23.1,238.1,12.5,238.1,6.9z"></path>
     <circle class="st1" cx="284.9" cy="64.7" r="4"></circle>
-    </svg>
+    </svg> --}}
+    <img
+      src="data:image/jpeg;base64,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FTyWUsfjzeZEsfjzeZFSsZYtERVLIREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREQ8kHNEQqeSylj8ebzIiKlYy/9k=" id="logosvg" alt="" 
+    >
 <div class="wrapper">
     <div class="slides">
-        <div class="slide" >
-            <h2 style="margin-bottom: 18px;">Institutional Enquiry Form</h2>
-            <p style="width:100%;margin:10px;">
-                <h4> Kurlon is with India on its fight to win the war on Covid.</h4>
-                <h4> To facilitate quick update of infrastructure for healthcare, Kurlon is offering the following products to institutions, </h4>
-                <h4> hospitals and NGOs involved in Covid treatment across india. </h4>
-            </p>
-            <div style="width: 40%; text-align:center; margin:0 auto;">
-            <button class="btn md-btn md-btn-wave md-btn-success" data-next>NEW ENQUIRY</button>
-            <a href="/login" class="no-ajaxy" style="width:100%; padding: 0; margin: 0;">
-                    <button class="btn md-btn md-btn-wave md-btn-primary" type="button" style="width: 100%; margin-bottom: 10px !important;">Check status of Enquiry</button>
-                </a>
-                </div>
-        </div>
 
-        <div id="userInfoSlide" class="slide hide">
-            <h2 style="margin-bottom: 25px;">User Information</h2>
-            <p style="text-align: center;">
-                <h4> We need to know how to store your request. Please give us a little information about you.</h4>
+        <div id="userInfoSlide" class="slide">
+          <h2 style="margin-bottom: 18px;">Institutional Enquiry Form</h2>
+            <p style="width:100%;margin:10px;">
+              
+                <h5>Kurlon is with India on its fight to win the war on Covid.</h5>
+                <h5>To facilitate quick update of infrastructure for healthcare, Kurlon is offering the following products to institutions, hospitals and NGOs involved in Covid treatment across india.</h5>
+              
             </p>
-            <div style="width: 30%; text-align:center; margin:0 auto;">
             <form id="userInfo" class="uk-form-stacked uk-clearfix">
                 <div class="uk-margin-medium-bottom">
-                    <label for="user-fullname">Full Name</label>
+                    <label for="user-fullname">Institution/Hospital Name</label>
                     <input id="user-fullname" name="user-fullname" class="md-input" type="text" required />
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="user-contact-person">Purchase Contact Person name</label>
+                    <input id="user-contact-person" name="user-contact-person" class="md-input" type="text" required />
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="user-gst">GST Number</label>
+                    <input id="user-gst" name="user-gst" class="md-input" type="text" required/>
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="user-address">Address</label>
+                    <input id="user-address" name="user-address" class="md-input" type="text" required />
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="user-city">City</label>
+                    <input id="user-city" name="user-city" class="md-input" type="text" required />
+                </div>
+                <div class="uk-margin-medium-bottom">
+
+                    <label for="user-state"></label>
+                  <select name="user-state" id="user-state" class="md-input">
+                    <option value="" selected>Select State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                  </select>
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="user-pincode">Pincode</label>
+                    <input id="user-pincode" name="user-pincode" class="md-input" type="text" required />
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="user-mobile">Mobile Number</label>
+                    <input id="user-mobile" name="user-mobile" class="md-input" type="text" required />
                 </div>
                 <div class="uk-margin-medium-bottom">
                     <label for="user-email">Email</label>
@@ -309,136 +359,164 @@
                     <label for="captcha">Please enter the letters you see above.</label>
                     <input id="captcha" name="captcha" class="md-input" type="text" required />
                 </div>
-                <div style="width: 25%; float: left;">
-                    <button class="btn md-btn md-btn-wave md-btn-primary1" type="button" data-prev>Back</button>
-                </div>
-                <div style="width: 70%; float: right;">
-                    <button id="checkEmail" class="btn md-btn md-btn-wave md-btn-success" type="button">Next</button>
+                
+                <div>
+                    <button id="checkEmail" class="btn md-btn md-btn-wave md-btn-success" type="button">Select Products</button>
                 </div>
             </form>
-            </div>
+
             <a href="#" class="no-ajaxy" id="privacyPolicyBtn">Privacy Policy</a>
         </div>
-          <div class="slide hide" style="overflow-y:scroll; height:500px; width:100%; align:center; justify:center;display:inline-block;
-   position:relative;">  
-            <h2 style="margin-bottom: 50px;">Enquiry Form</h2>
-            <p style="text-align: center; margin-bottom: 25px;">
-               <h4>Kurlon is with India on its fight to win the war on Covid. </h4>
-               <h4>To facilitate quick update of infrastructure for healthcare, </h4>
-                <h4>Kurlon is offering the following products to institutions, hospitals and NGOs.</h4>
+        <div class="slide hide">
+            <h2 style="margin-bottom: 25px;">Select Products</h2>
+            <p style="text-align: left; margin-bottom: 25px;">
+                * Unit Prices shown are without GST. GST applicable on the list price. Freight charges extra based on actuals
             </p>
-            <p>Please provide your details in the below form to get a quotation and place your order.</p>
-            <div style="width: 40%; text-align:center; margin:0 auto;">
+
             <form id="adminAccount" class="uk-form-stacked uk-clearfix">
-                   <div class="uk-margin-medium-bottom">
-                    <label for="ticket-subject">GST Number</label>
-                    <input type="text" id="ticket-subject" name="ticket-subject" class="md-input" required />
+              <h4>Select your products</h4>
+                <div class="uk-margin-medium-bottom" id="products-table">
+                  <table>
+                    <thead>
+                    <tr>
+                      <th style="width: 30%">Variety</th>
+                      <th style="width: 25%">Size</th>
+                      <th style="width: 15%">Unit Price</th>
+                      <th style="width: 10%">Qauntity</th>
+                      <th style="width: 20%">Total Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>EPE + Foam Quilt(13D)</td>
+                      <td>72mmx30mmx90mm</td>
+                      <td>&#x20B9; 1150/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>EPE + Foam Quilt(13D)</td>
+                      <td>72mmx30mmx70mm</td>
+                      <td>&#x20B9; 915/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>EPE + Foam Quilt(13D)</td>
+                      <td>72mmx 36mmx90mm</td>
+                      <td>&#x20B9; 1280/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>EPE + Foam Quilt(13D)</td>
+                      <td>72mmx36mmx70mm</td>
+                      <td>&#x20B9; 1115/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>EPE + Foam Quilt(13D)</td>
+                      <td>72mmx30mmx100mm</td>
+                      <td>&#x20B9; 1220/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>EPE + Foam Quilt(13D)</td>
+                      <td>72mmx36mmx100mm</td>
+                      <td>&#x20B9; 1365/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>Bonded + foam quilt(13D)</td>
+                      <td>72mmX30mmX100mm</td>
+                      <td>&#x20B9; 2260/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>Bonded + foam quilt(13D)</td>
+                      <td>72mmX36mmX100mm</td>
+                      <td>&#x20B9; 2585/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>Bonded + foam quilt(13D)</td>
+                      <td>72mmx30mmx75mm</td>
+                      <td>&#x20B9; 1830/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>Bonded + foam quilt(13D)</td>
+                      <td>72mmx36mmx75mm</td>
+                      <td>&#x20B9; 2075/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>Foam(23D)</td>
+                      <td>72mmx30mmx75mm</td>
+                      <td>&#x20B9; 1330/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>Foam(23D)</td>
+                      <td>72mmx30mmx90mm</td>
+                      <td>&#x20B9; 1615/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>Foam(23D)</td>
+                      <td>72mmx36mmx75mm</td>
+                      <td>&#x20B9; 1495/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>Foam(23D)</td>
+                      <td>72mmx36mmx90mm</td>
+                      <td>&#x20B9; 1750/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    <tr>
+                      <td>Pillow</td>
+                      <td>N/A</td>
+                      <td>&#x20B9; 100/-</td>
+                      <td> <input type="text" class="md-input" style="background-color: #fff; border-color: rgba(0,0,0,0.4)"> </td>
+                      <td>&#x20B9; 0</td>
+                    </tr>
+                    </tbody>
+                  </table>
                 </div>
-                 <div class="uk-margin-medium-bottom">
-                    <label for="ticket-issue">Institution/Hospital Name</label>
-                    <input type="text" id="ticket-issue" name="ticket-issue" class="md-input" required />
+                <div class="uk-margin-medium-bottom hide" id="custom-requirement">
+                    <label for="ticket-custom-requirement">Provide Custom Requirements</label>
+                    <textarea name="ticket-custom-requirement" id="ticket-custom-requirement" cols="30" rows="10" class="md-input" required></textarea>
+                </div>
+                <div class="uk-margin-medium-bottom">
+                    <label for="ticket-remarks">Remarks</label>
+                    <input type="text" id="ticket-remarks" name="ticket-remarks" class="md-input" required />
                 </div>
 
-               <div class="uk-margin-medium-bottom">
-                    <label for="ticket-address">Address</label>
-                    <input type="text" id="ticket-address" name="ticket-address" class="md-input" required />
-                </div>
                 <div class="uk-margin-medium-bottom">
-                    <label for="ticket-city">City</label>
-                    <input type="text" id="ticket-city" name="ticket-city" class="md-input" required />
+                    <label for="ticket-issue" style="font-weight: 700;"> 
+                    <input type="checkbox" style="vertical-align: text-top;" id="show-custom-requirement" />
+                      Do you have some CUSTOM REQUIREMENTS</label>
                 </div>
-                <div class="uk-margin-medium-bottom">
-                    <label for="ticket-pin">PIN</label>
-                    <input type="text" id="ticket-pin" name="ticket-pin" class="md-input" required />
-                </div>
-                  <div class="uk-margin-medium-bottom">
-                    <label for="ticket-state">State</label>
-                    <input type="text" id="ticket-state" name="ticket-state" class="md-input" required />
-                </div>
-                <div class="uk-margin-medium-bottom">
-                    <label for="ticket-pname">Purchase Contact Person name</label>
-                    <input type="text" id="ticket-pname" name="ticket-pname" class="md-input" required />
-                </div>
-                <div class="uk-margin-medium-bottom">
-                    <label for="ticket-email">Email ID</label>
-                    <input type="text" id="ticket-email" name="ticket-email" class="md-input" required />
-                </div>
-                <div class="uk-margin-medium-bottom">
-                    <label for="ticket-mobile">Mobile number</label>
-                    <input type="text" id="ticket-mobile" name="ticket-mobile" class="md-input" required />
-                </div> 
-                <p style="text-align: center; margin-bottom: 25px;">
-                   * Unit Prices shown are without GST. GST applicable on the list price. Freight charges extra based on actuals
-                 </p>
-                 <div style="display:flex;justify-content: space-between;text-align:center;margin:25px;">
-                     
-                    <select>
-                     <itemgroup label="EPE + Foam Quilt( 13 D) ">
-                         <option value="EPE + Foam Quilt( 13 D) 72 x 30 x 90mm">EPE + Foam Quilt( 13 D) 72 x 30 x 90mm</option>
-                         <option value="EPE + Foam Quilt( 13 D) 72 x 30 x 70mm ">EPE + Foam Quilt( 13 D) 72 x 30 x 70mm </option>
-                         <option value="EPE + Foam Quilt( 13 D) 72 x 36 x 90mm  ">EPE + Foam Quilt( 13 D) 72 x 36 x 90mm </option>
-                         <option value="EPE + Foam Quilt( 13 D) 72 x 36 x 70mm ">EPE + Foam Quilt( 13 D) 72 x 36 x 70mm </option>
-                         <option value="EPE + Foam Quilt( 13 D) 72 x 30 x 100mm  ">EPE + Foam Quilt( 13 D) 72 x 30 x 100mm  </option>
-                         <option value="EPE + Foam Quilt( 13 D) 72 x 36 x100mm  ">EPE + Foam Quilt( 13 D) 72 x 36 x100mm  </option>
-                      </itemgroup>
-                      <itemgroup label="Bonded + foam quilt( 13 D)">
-                         <option value="Bonded + foam quilt( 13 D) 72 X 30 X 100 ">Bonded + foam quilt( 13 D) 72 X 30 X 100 </option>
-                         <option value="Bonded + foam quilt( 13 D) 72 X 36 X 100 ">Bonded + foam quilt( 13 D) 72 X 36 X 100 </option>
-                         <option value="Bonded + foam quilt( 13 D) 72 x 30 x 75 ">Bonded + foam quilt( 13 D) 72 x 30 x 75 </option>
-                         <option value="Bonded + foam quilt( 13 D) 72 x 36 x 75 ">Bonded + foam quilt( 13 D) 72 x 36 x 75 </option>
-                       </itemgroup>
-                       <itemgroup label="Foam( 23 D)">
-                           <option value="Foam( 23 D) 72 x 30 x 75  ">Foam( 23 D) 72 x 30 x 75  </option>
-                           <option value="Foam( 23 D) 72 x 30 x 90   ">Foam( 23 D) 72 x 30 x 90   </option>
-                           <option value="Foam( 23 D) 72 x 36 x 75    ">Foam( 23 D) 72 x 36 x 75    </option>
-                           <option value="Foam( 23 D) 72 x 36 x90     ">Foam( 23 D) 72 x 36 x90     </option>
-                       </itemgroup>
-                    </select>
-                    <div>
-                   <label for="ticket-subject">Quantity</label>
-                    <input type="text" id="ticket-subject" name="ticket-subject" class="md-input" required />
-                    </div>
-                    <div>
-                   <label for="ticket-subject">Unit Price</label>
-                    <input type="text" id="ticket-subject" name="ticket-subject" class="md-input" required />
-                    </div>
-                    <div>
-                   <label for="total_price">Total Price</label>
-                    <input type="text" id="total_price" name="total_price" class="md-input" required />
-                    </div>
-                 </div> 
-                {{!-- <div class="uk-margin-medium-bottom"> 
-                    <label for="ticket-subject">Subject</label>
-                    <input type="text" id="ticket-subject" name="ticket-subject" class="md-input" required />
-                </div>
-                <div class="uk-margin-medium-bottom">
-                    <label for="ticket-issue">Issue</label>
-                    <textarea name="ticket-issue" id="ticket-issue" cols="30" rows="10" class="md-input" required></textarea>
-                </div>  --}}
-                <div style="display:flex;justify-content: space-between;text-align:center;margin:25px;">
-                    <div style="width:50%;">
-                    </div>
-                    <div  style="width:50%;">
-                        <div style="display:flex;justify-content: space-between;text-align:center;">
-                        <label>SUB TOTAL (Without GST)</label><label>XXXXX</label>
-                        </div>
-                        <div style="display:flex;justify-content: space-between;text-align:center;">
-                        <label>GST 18%</label><label>XXXXX</label>
-                        </div>
-                        <div style="display:flex;justify-content: space-between;text-align:center;">
-                        <label><b>TOTAL</b></label><label><b>XXXXX</b></label>
-                        </div>
-                    </div>
-                 </div>
+
                 <div style="width: 25%; float: left;">
                     <button class="btn md-btn md-btn-wave md-btn-primary1" type="button" data-prev>Back</button>
                 </div>
                 <div style="width: 70%; float: right;">
-                    <button class="btn md-btn md-btn-wave md-btn-success" type="button" id="submit-issue">Submit my Requirement to Kurlon team for Processing</button>
+                    <button class="btn md-btn md-btn-wave md-btn-success" type="button" id="submit-issue">Submit Requirement to Kurlon</button>
                 </div>
             </form>
-            </div>
-
         </div>
         <div class="slide hide">
             <h2 style="margin-bottom: 25px;">Creating Issue...</h2>
@@ -533,7 +611,19 @@
 
                 totalSlides++;
             });
-
+            var showCustomRequirements = false
+            $('#show-custom-requirement').change((e) => {
+              e.preventDefault()
+              showCustomRequirements = !showCustomRequirements
+              if (showCustomRequirements) {
+                $('#products-table').addClass('hide')
+                $('#custom-requirement').removeClass('hide')
+              }
+              if (!showCustomRequirements) {
+                $('#products-table').removeClass('hide')
+                $('#custom-requirement').addClass('hide')
+              }
+            })
 
             function getCaptcha() {
                 $.ajax({
@@ -562,7 +652,7 @@
                 //return FALSE to indicate this click was allowed
                 return false;
             }
-
+            
             $('button[data-next]').click(function() {
                 if (isDoubleClicked($(this))) return;
                 advanceSlide();
@@ -591,8 +681,9 @@
             $('button#checkEmail').click(function() {
                 if (isDoubleClicked($(this))) return;
                 var userInfoFormData = $('form#userInfo').serializeObject();
-                var $emailField, $fullnameField;
-                var $emailValid = false, $fullnameValid = false;
+                console.log(userInfoFormData)
+                var $emailField, $fullnameField, $stateField, $contactPersonField, $gstField, $addressField, $cityField, $pincodeField, $mobileField;
+                var $emailValid = false, $fullnameValid = false, $stateValid = false, $contactPersonValid = false, $gstValid = false, $addressValid = false, $cityValid = false, $pincodeValid = false, $mobileValid = false;
 
                 if (!userInfoFormData['user-email'] || !validateEmail(userInfoFormData['user-email'])) {
                     $emailField = $('form#userInfo').find('input#user-email');
@@ -606,6 +697,99 @@
                     $emailField.removeClass('uk-form-danger');
 
                     $emailValid = true;
+                }
+                if (!userInfoFormData['user-gst'] || !validateGST(userInfoFormData['user-gst'])) {
+                    $gstField = $('form#userInfo').find('input#user-gst');
+                    $gstField.parent('.md-input-wrapper').addClass('has-error');
+                    $gstField.parent('.md-input-wrapper').find('.md-input-bar').addClass('bottom-fix error-color');
+                    $gstField.addClass('uk-form-danger');
+                } else {
+                    $gstField = $('form#userInfo').find('input#user-gst');
+                    $gstField.parent('.md-input-wrapper').removeClass('has-error');
+                    $gstField.parent('.md-input-wrapper').find('.md-input-bar').removeClass('bottom-fix error-color');
+                    $gstField.removeClass('uk-form-danger');
+
+                    $gstValid = true;
+                }
+                if (!userInfoFormData['user-pincode'] || !validatePincode(userInfoFormData['user-pincode'])) {
+                    $pincodeField = $('form#userInfo').find('input#user-pincode');
+                    $pincodeField.parent('.md-input-wrapper').addClass('has-error');
+                    $pincodeField.parent('.md-input-wrapper').find('.md-input-bar').addClass('bottom-fix error-color');
+                    $pincodeField.addClass('uk-form-danger');
+                } else {
+                    $pincodeField = $('form#userInfo').find('input#user-pincode');
+                    $pincodeField.parent('.md-input-wrapper').removeClass('has-error');
+                    $pincodeField.parent('.md-input-wrapper').find('.md-input-bar').removeClass('bottom-fix error-color');
+                    $pincodeField.removeClass('uk-form-danger');
+
+                    $pincodeValid = true;
+                }
+                if (!userInfoFormData['user-mobile'] || !validateMobile(userInfoFormData['user-mobile'])) {
+                    $mobileField = $('form#userInfo').find('input#user-mobile');
+                    $mobileField.parent('.md-input-wrapper').addClass('has-error');
+                    $mobileField.parent('.md-input-wrapper').find('.md-input-bar').addClass('bottom-fix error-color');
+                    $mobileField.addClass('uk-form-danger');
+                } else {
+                    $mobileField = $('form#userInfo').find('input#user-mobile');
+                    $mobileField.parent('.md-input-wrapper').removeClass('has-error');
+                    $mobileField.parent('.md-input-wrapper').find('.md-input-bar').removeClass('bottom-fix error-color');
+                    $mobileField.removeClass('uk-form-danger');
+
+                    $mobileValid = true;
+                }
+                if (!userInfoFormData['user-state'] || userInfoFormData['user-state'] == "") {
+                    $stateField = $('form#userInfo').find('select#user-state');
+                    console.log($stateField)
+                    console.log($stateField.parent('.md-input-wrapper'))
+                    $stateField.parent('.md-input-wrapper').addClass('has-error');
+                    $stateField.parent('.md-input-wrapper').find('.md-input-bar').addClass('bottom-fix error-color');
+                    $stateField.addClass('uk-form-danger');
+                } else {
+                    $stateField = $('form#userInfo').find('select#user-state');
+                    $stateField.parent('.md-input-wrapper').removeClass('has-error');
+                    $stateField.parent('.md-input-wrapper').find('.md-input-bar').removeClass('bottom-fix error-color');
+                    $stateField.removeClass('uk-form-danger');
+
+                    $stateValid = true;
+                }
+                if (!userInfoFormData['user-contact-person'] || (userInfoFormData['user-contact-person'].length < 3)) {
+                    $contactPersonField = $('form#userInfo').find('input#user-contact-person');
+                    $contactPersonField.parent('.md-input-wrapper').addClass('has-error');
+                    $contactPersonField.parent('.md-input-wrapper').find('.md-input-bar').addClass('bottom-fix error-color');
+                    $contactPersonField.addClass('uk-form-danger');
+                } else {
+                    $contactPersonField = $('form#userInfo').find('input#user-contact-person');
+                    $contactPersonField.parent('.md-input-wrapper').removeClass('has-error');
+                    $contactPersonField.parent('.md-input-wrapper').find('.md-input-bar').removeClass('bottom-fix error-color');
+                    $contactPersonField.removeClass('uk-form-danger');
+
+                    $contactPersonValid = true;
+                }
+                if (!userInfoFormData['user-city'] || (userInfoFormData['user-city'].length < 3)) {
+                    $cityField = $('form#userInfo').find('input#user-city');
+                    $cityField.parent('.md-input-wrapper').addClass('has-error');
+                    $cityField.parent('.md-input-wrapper').find('.md-input-bar').addClass('bottom-fix error-color');
+                    $cityField.addClass('uk-form-danger');
+                } else {
+                    $cityField = $('form#userInfo').find('input#user-city');
+                    $cityField.parent('.md-input-wrapper').removeClass('has-error');
+                    $cityField.parent('.md-input-wrapper').find('.md-input-bar').removeClass('bottom-fix error-color');
+                    $cityField.removeClass('uk-form-danger');
+
+                    $cityValid = true;
+                }
+                if (!userInfoFormData['user-address'] || (userInfoFormData['user-address'].length < 6)) {
+                    $addressField = $('form#userInfo').find('input#user-address');
+                    $addressField.parent('.md-input-wrapper').addClass('has-error');
+                    $addressField.parent('.md-input-wrapper').find('.md-input-bar').addClass('bottom-fix error-color');
+                    $addressField.addClass('uk-form-danger');
+                } else {
+                    $addressField = $('form#userInfo').find('input#user-address');
+                    $addressField.parent('.md-input-wrapper').removeClass('has-error');
+                    $addressField.parent('.md-input-wrapper').find('.md-input-bar').removeClass('bottom-fix error-color');
+                    $addressField.removeClass('uk-form-danger');
+
+                    $addressValid = true;
                 }
 
                 if (!userInfoFormData['user-fullname'] || (userInfoFormData['user-fullname'].length < 5)) {
@@ -622,7 +806,7 @@
                     $fullnameValid = true;
                 }
 
-                if (!$fullnameValid || !$emailValid)
+                if (!$emailValid || !$fullnameValid || !$stateValid || !$contactPersonValid || !$gstValid || !$addressValid || !$cityValid || !$pincodeValid || !$mobileValid)
                     return false;
 
                 var $checkEmailBtn = $(this);
@@ -749,9 +933,8 @@
                 ticket = {
                     subject: adminInfoFormData['ticket-subject'],
                     issue: adminInfoFormData['ticket-issue']
-                }; 
+                };
 
-                
                 advanceSlide();
 
                 //Send the install POST wait for Response...
@@ -817,7 +1000,9 @@
                     activeSlide++;
                 }
             }
-
+            function showCustomRequirement(e) {
+              console.log(e)
+            }
             function sendIssue() {
                 var d = {
                     user: userInfo,
@@ -851,6 +1036,18 @@
             function validateEmail(email) {
                 var mailFormat = /^\w+([.-]\w+)*@\w+([.-]\w+)*(\.\w+)+$/;
                 return email.match(mailFormat);
+            }
+            function validateGST(gst) {
+                var gstFormat = /^([0-9]{2}[a-zA-Z]{4}([a-zA-Z]{1}|[0-9]{1})[0-9]{4}[a-zA-Z]{1}([a-zA-Z]|[0-9]){3}){0,15}$/;
+                return gst.match(gstFormat);
+            }
+            function validateMobile(mobile) {
+                var mobileFormat = /[2-9]{2}\d{8}/;
+                return mobile.match(mobileFormat);
+            }
+            function validatePincode(pincode) {
+                var pincodeFormat = /^[1-9][0-9]{5}$/gm;
+                return pincode.match(pincodeFormat);
             }
 
             $.fn.serializeObject = function(){
