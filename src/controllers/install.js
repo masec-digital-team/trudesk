@@ -149,6 +149,8 @@ installController.install = function (req, res) {
     password: data['account[password]'],
     passconfirm: data['account[cpassword]'],
     email: data['account[email]'],
+    phone: 'not-required',
+    gst: 'not-required',
     fullname: data['account[fullname]']
   }
 
