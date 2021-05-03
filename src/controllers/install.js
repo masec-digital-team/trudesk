@@ -337,6 +337,8 @@ installController.install = function (req, res) {
             username: user.username,
             password: user.password,
             fullname: user.fullname,
+            phone: 'not-required',
+            gst: 'not-required',
             email: user.email,
             role: roleResults.adminRole._id,
             title: 'Administrator',
