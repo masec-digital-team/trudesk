@@ -28,6 +28,7 @@ var commentSchema = require('./comment')
 var noteSchema = require('./note')
 var attachmentSchema = require('./attachment')
 var historySchema = require('./history')
+const { any } = require('../emitter')
 require('./tag')
 require('./ticketpriority')
 
@@ -101,6 +102,7 @@ var ticketSchema = mongoose.Schema({
   issue: { type: String, required: true },
   closedDate: { type: Date },
   dueDate: { type: Date },
+  customFields: {},
   comments: [commentSchema],
   notes: [noteSchema],
   attachments: [attachmentSchema],

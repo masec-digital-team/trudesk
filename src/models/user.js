@@ -51,8 +51,10 @@ var COLLECTION = 'accounts'
  */
 var userSchema = mongoose.Schema({
   username: { type: String, required: true, unique: true, lowercase: true },
+  gst: { type: String, required: true, unique: true, lowercase: true },
   password: { type: String, required: true, select: false },
   fullname: { type: String, required: true, index: true },
+  phone: { type: String, required: true },
   email: { type: String, required: true, unique: true, lowercase: true },
   role: { type: mongoose.Schema.Types.ObjectId, ref: 'roles', required: true },
   lastOnline: Date,
@@ -346,12 +348,12 @@ userSchema.statics.getByUsername = userSchema.statics.getUserByUsername
  * @param {String} email Email to Query MongoDB
  * @param {QueryCallback} callback MongoDB Query Callback
  */
-userSchema.statics.getUserByEmail = function (email, callback) {
+userSchema.statics.getUserByEmail = function (email, gst, callback) {
   if (_.isUndefined(email)) {
     return callback('Invalid Email - UserSchema.GetUserByEmail()', null)
   }
 
-  return this.model(COLLECTION).findOne({ email: email.toLowerCase() }, callback)
+  return this.model(COLLECTION).findOne({ $or: [{ email: email.toLowerCase() }, { gst: gst.toLowerCase() }] }, callback)
 }
 
 /**

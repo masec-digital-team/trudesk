@@ -966,14 +966,18 @@ apiUsers.removeL2Auth = function (req, res) {
 
 apiUsers.checkEmail = function (req, res) {
   var email = req.body.email
-
+  var gst = req.body.gst
   if (_.isUndefined(email) || _.isNull(email)) {
     return res.status(400).json({ success: false, error: 'Invalid Post Data' })
   }
+  if (_.isUndefined(gst) || _.isNull(gst)) {
+    return res.status(400).json({ success: false, error: 'Invalid Post Data' })
+  }
 
-  UserSchema.getUserByEmail(email, function (err, users) {
+  UserSchema.getUserByEmail(email, gst, function (err, users) {
+    console.log(users)
+
     if (err) return res.status(400).json({ success: false, error: err.message })
-
     if (!_.isNull(users)) {
       return res.json({ success: true, exist: true })
     }

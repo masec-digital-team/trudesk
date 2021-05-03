@@ -508,10 +508,13 @@ apiTickets.create = function (req, res) {
 apiTickets.createPublicTicket = function (req, res) {
   var Chance = require('chance')
 
+  var products = setupProducts()
+
   var chance = new Chance()
   var response = {}
   response.success = true
   var postData = req.body
+  console.log(postData)
   if (!_.isObject(postData)) return res.status(400).json({ success: false, error: 'Invalid Post Data' })
 
   var user, group, ticket, plainTextPass
@@ -539,6 +542,8 @@ apiTickets.createPublicTicket = function (req, res) {
 
         user = new UserSchema({
           username: postData.user.email,
+          gst: postData.user.gst,
+          phone: postData.user.phone,
           password: plainTextPass,
           fullname: postData.user.fullname,
           email: postData.user.email,
@@ -547,6 +552,7 @@ apiTickets.createPublicTicket = function (req, res) {
         })
 
         user.save(function (err, savedUser) {
+          console.log(err)
           if (err) return next(err)
 
           return next(null, savedUser)
@@ -599,6 +605,13 @@ apiTickets.createPublicTicket = function (req, res) {
             owner: savedUser._id,
             group: group._id,
             type: ticketType._id,
+            customFields: {
+              contactPerson: postData.ticket.contactPerson,
+              address: postData.ticket.address,
+              city: postData.ticket.city,
+              state: postData.ticket.state,
+              pincode: postData.ticket.pincode
+            },
             priority: _.first(ticketType.priorities)._id, // TODO: change when priority order is complete!
             subject: sanitizeHtml(postData.ticket.subject).trim(),
             issue: sanitizeHtml(postData.ticket.issue).trim(),
@@ -1938,6 +1951,88 @@ apiTickets.restoreDeleted = function (req, res) {
 
     return res.json({ success: true })
   })
+}
+
+function setupProducts () {
+  var products = [
+    {
+      name: `EPE + Foam Quilt(13D)-72mmx30mmx90mm`,
+      key: 'products[101]',
+      price: 1150
+    },
+    {
+      name: `EPE + Foam Quilt(13D)-72mmx30mmx70mm`,
+      key: 'products[102]',
+      price: 915
+    },
+    {
+      name: `EPE + Foam Quilt(13D)-72mmx36mmx90mm`,
+      key: 'products[103]',
+      price: 1280
+    },
+    ,
+    {
+      name: `EPE + Foam Quilt(13D)-72mmx36mmx70mm`,
+      key: 'products[104]',
+      price: 1115
+    },
+    {
+      name: `EPE + Foam Quilt(13D)-72mmx30mmx100mm`,
+      key: 'products[105]',
+      price: 1220
+    },
+    {
+      name: `EPE + Foam Quilt(13D)-72mmx36mmx100mm`,
+      key: 'products[106]',
+      price: 1365
+    },
+    {
+      name: `Bonded + foam quilt(13D)-72mmX30mmX100mm`,
+      key: 'products[107]',
+      price: 2260
+    },
+    {
+      name: `Bonded + foam quilt(13D)-72mmX36mmX100mm`,
+      key: 'products[108]',
+      price: 2585
+    },
+    {
+      name: `Bonded + foam quilt(13D)-72mmx30mmx75mm`,
+      key: 'products[109]',
+      price: 1830
+    },
+    {
+      name: `Bonded + foam quilt(13D)-72mmx36mmx75mm`,
+      key: 'products[110]',
+      price: 2075
+    },
+    {
+      name: `Foam(23D)-72mmx30mmx75mm`,
+      key: 'products[111]',
+      price: 1330
+    },
+    {
+      name: `Foam(23D)-72mmx30mmx90mm`,
+      key: 'products[112]',
+      price: 1615
+    },
+    {
+      name: `Foam(23D)-72mmx36mmx75mm`,
+      key: 'products[113]',
+      price: 1495
+    },
+    {
+      name: `Foam(23D)-72mmx36mmx90mm`,
+      key: 'products[114]',
+      price: 1750
+    },
+    {
+      name: `Pillow`,
+      key: 'products[115]',
+      price: 100
+    }
+  ]
+  return products
 }
 
 module.exports = apiTickets
