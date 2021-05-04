@@ -1,16 +1,10 @@
 version: "3"
 
 services: 
-  trudesk-db:
-    image: mongo:4.2
-    ports: 
-      - 27017:27017
-    volumes: 
-      - ./db:/data/db
   trudesk:
     build: .
     ports:
-      - 8118:8118
+      - 80:8118
     volumes: 
       - ./src:/usr/src/trudesk/src
     depends_on: 
