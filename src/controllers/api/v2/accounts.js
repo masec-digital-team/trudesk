@@ -39,6 +39,8 @@ accountsApi.create = function (req, res) {
             password: postData.password,
             fullname: postData.fullname,
             title: postData.title,
+            gst: 'not-required',
+            phone: 'not-required',
             role: postData.role,
             accessToken: chance.hash()
           },
